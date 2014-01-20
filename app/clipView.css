@@ -1,0 +1,33 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+webview {
+    position: absolute;
+    overflow: hidden;
+}
+
+#handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 28px;
+    background-color: #1A9D87;
+    transition: opacity 0.2s ease 0;
+    opacity: 0;
+
+    -webkit-app-region: drag;
+}
+
+body:hover #handle {
+    opacity: 1.0;
+}
+
+#title {
+    color: #CBCECD;
+    margin-top: 7px;
+    margin-left: 10px;
+}
