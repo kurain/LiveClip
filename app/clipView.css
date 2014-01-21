@@ -18,6 +18,7 @@ webview {
     background-color: #1A9D87;
     transition: opacity 0.2s ease 0;
     opacity: 0;
+    white-space: nowrap;
 
     -webkit-app-region: drag;
 }

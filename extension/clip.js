@@ -10,9 +10,9 @@ function collectInformation() {
         height : window.innerHeight,
         href   : window.location.href,
         innerWidth  : window.innerWidth,
-        innerheight : window.innerHeight,
+        innerHeight : window.innerHeight,
         outerWidth  : window.outerWidth,
-        outerheight : window.outerHeight,
+        outerHeight : window.outerHeight,
         scrollTop : document.body.scrollTop,
         scrollLeft: document.body.scrollLeft
     };

@@ -9,11 +9,17 @@ chrome.app.runtime.onLaunched.addListener(function() {
 
 function createWindow(url, clipRect, windowInfo) {
     console.log(['create',url, clipRect, windowInfo]);
+    var windowLeft = windowInfo.left + clipRect.left;
+    var windowTop  = windowInfo.top +
+        (windowInfo.outerHeight - windowInfo.innerHeight) + clipRect.top;
+    console.log([windowLeft,windowTop]);
     chrome.app.window.create(
         'clipView.html',
         {
             frame: "none",
             'bounds': {
+                'top':   windowTop,
+                'left':  windowLeft,
                 'width': clipRect.width,
                 'height': clipRect.height
             },
@@ -37,7 +43,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
 chrome.runtime.onMessageExternal.addListener(function(message, sender, sendResponse){
     console.log(message);
     console.log(sender);
-    if (sender.id == "hmiobeflepfipodddkmplaooakccpaif") {
+    if (sender.id == "ilbmdbiepgjdmhcejflpjgmifoidfmak") {
         createWindow(message.window.href, message.rect, message.window);
     }
 });

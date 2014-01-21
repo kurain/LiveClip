@@ -16,19 +16,21 @@ function getWindowPos(url, rect) {
     $webView.get(0).executeScript({
         code:"var b = document.body; [b.clientWidth, b.clientHeight, b.scrollTop, b.scrollLeft]"
     },function(r){
-        console.log(r[0]);
+        console.log(r);
         var windowInfo = {
             href  : $('webView').attr('src'),
             width : r[0][0],
             height:  r[0][1],
             innerWidth : r[0][0],
             innerHeight:  r[0][1],
-            outerWidth : r[0][0],
-            outerHeight:  r[0][1],
+            outerWidth : window.outerWidth,
+            outerHeight: window.outerHeight,
+            top    : window.screenTop,
+            left   : window.screenLeft,
             scrollTop: r[0][2],
             scrollLeft: r[0][3]
         };
-        rect.top = rect.top - $('webView').offset().top;
+        rect.top = rect.top - parseInt($('webView').css('padding-top'));
         var info =  {'window': windowInfo, 'rect': rect};
         chrome.runtime.sendMessage(info);
     });

@@ -1,10 +1,12 @@
-body {
+html, body {
     padding: 0px;
     margin: 0px;
+    height: 100%;
 }
 
-webview {
-    margin: 0 20px 0 0;
+#webView {
+    box-sizing: border-box;
+    padding-top: 32px;
     width:100%;
     height:100%;
 }
@@ -19,11 +21,12 @@ webview {
 }
 
 #controller {
-    /* position: absolute; */
-    /* top : 0px; */
-    /* left : 0px; */
-    margin: 10px;
+    position: absolute;
+    top : 0px;
+    left : 0px;
+    margin: 5px;
     width: 100%;
+    height: 22px;
 }
 
 #text-url {
