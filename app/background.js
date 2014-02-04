@@ -43,7 +43,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
 chrome.runtime.onMessageExternal.addListener(function(message, sender, sendResponse){
     console.log(message);
     console.log(sender);
-    if (sender.id == "ilbmdbiepgjdmhcejflpjgmifoidfmak") {
+    if (sender.id == "mijdgmlkdminanlneoaamokbjkaikjol") {
         createWindow(message.window.href, message.rect, message.window);
     }
 });
