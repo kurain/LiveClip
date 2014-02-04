@@ -5,5 +5,5 @@ chrome.browserAction.onClicked.addListener(function(tab){
 })
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
-    chrome.runtime.sendMessage('ffbmjilagofoenleoahpkhapelfejedd', message);
+    chrome.runtime.sendMessage('npkbmlmjopccapmpipfjcbccbdnhhnpj', message);
 });
