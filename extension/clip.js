@@ -47,6 +47,7 @@ function mouseUpHandler(e) {
     if (rect.width > 0) {
         var info = collectInformation();
         chrome.runtime.sendMessage(info);
+        removeMouseEventHandler();
         clearRect();
     }
 }
@@ -56,6 +57,12 @@ function mouseMoveHandler(e) {
         endPoint = getPoint(e);
         drawRect(startPoint, endPoint);
     }
+}
+
+function removeMouseEventHandler() {
+    window.onmousedown = null;
+    window.onmouseup   = null;
+    window.onmousemove = null;
 }
 
 function clearRect() {
